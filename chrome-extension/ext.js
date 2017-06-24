@@ -9,15 +9,11 @@ titleCards.forEach(elem => {
   addDelayListener(elem); 
 });
 
-
 function addDelayListener(elem) {
   var timeout = null;
   elem.addEventListener('mouseenter', (e) => timeout = setTimeout(() => omdbRequest(e.toElement.getAttribute("aria-label"), successCallback, failureCallback), 1000));
   elem.addEventListener('mouseleave', () => clearTimeout(timeout));
 }
-
-function listenerCallback(e) {
-  }
 
 function omdbRequest(title, success, failure) {
   var url = "http://localhost:8000/title/" + encodeURIComponent(title);
