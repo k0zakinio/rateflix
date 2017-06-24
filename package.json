@@ -2,9 +2,9 @@
   "name": "rateflix",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "app/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

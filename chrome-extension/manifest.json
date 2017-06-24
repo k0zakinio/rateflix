@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "rateflix",
+  "version": "0.1",
+  "content_scripts": [
+    { 
+      "matches": [
+	"https://www.netflix.com/browse",
+	"http://www.netflix.com/browse"
+      ],
+      "js":["ext.js"]
+    }
+  ]
+}
