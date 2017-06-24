@@ -1,6 +1,6 @@
-var titleCards = [];
 
 setInterval(() => {
+  var titleCards = [];
   var cards = document.querySelectorAll(".title_card");
   cards.forEach(c => {
     var t = c.getAttribute("aria-label");
@@ -10,10 +10,12 @@ setInterval(() => {
 }, 1000);
 
 function addDelayListener(elem) {
-  if(elem.getAttribute('has-listener') !== null) return;
+  if(elem.getAttribute('has-listener') !== null) {
+    return;
+  };
   var timeout = null;
   function setListener(e) {
-    timeout = setTimeout(() => omdbRequest(e.toElement, successCallback, failureCallback), 1000);
+    timeout = setTimeout(() => omdbRequest(e.toElement, successCallback, failureCallback), 500);
   };
 
   elem.addEventListener('mouseenter', setListener);
@@ -38,7 +40,12 @@ function omdbRequest(elem, success, failure) {
 
 
 function successCallback(json, elem) {
-  elem.querySelector('.meta').innerHTML += "<span class='duration'>IMDB:" + json.imdbRating + "</span>";
+  var meta = elem.querySelector('.meta');
+  if(meta !== null && meta.querySelector('.duration[data="rating"]') == null) {
+    meta.innerHTML += "<span class='duration' data='rating'>IMDB:" + json.imdbRating + "</span>";
+  } else {
+    console.log("ERROR: not adding html as there should already be html");
+  }
 };
 
 function failureCallback(statusCode) {
