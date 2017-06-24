@@ -4,6 +4,8 @@ const app = express();
 
 const apiKey = process.env.OMDB_API_KEY;
 
+app.set('port', (process.env.PORT || 8000));
+
 app.get("/title/:title", (req, res) => {
   let title = req.params.title;
   let omdbResponse = omdbFromTitle(title, function(response) {
@@ -11,8 +13,8 @@ app.get("/title/:title", (req, res) => {
   });
 });
 
-app.listen(8000, () => {
-  console.log("server spun up... listening on port 8000");
+app.listen(app.get('port'), () => {
+  console.log("server spun up... listening on port " + app.get('port'));
 });
 
 
