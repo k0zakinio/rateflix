@@ -1,10 +1,12 @@
 # rateflix
 Add ratings to netflix pages
 
-## Purpose
-I hate going onto netflix and not seeing what ratings things have, so the intention is to use this as the backend, speaking to the OMDB API to gather ratings, then inject the ratings onto the netflix page via a chrome plugin (yet to be created)
+![preview](http://i.imgur.com/VbSZGjC.png)
 
-## Usage
+## Purpose
+I hate going onto netflix and not seeing what ratings things have, so there is a little express server acting as a proxy, speaking to the OMDB API to gather ratings.  Ratings are then injected onto the netflix page via a chrome extension which does a little bit of page scraping
+
+## API Usage (only used by chrome extension)
 
 Title search
 
