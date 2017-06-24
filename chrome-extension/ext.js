@@ -16,7 +16,7 @@ function addDelayListener(elem) {
 }
 
 function omdbRequest(title, success, failure) {
-  var url = "http://localhost:8000/title/" + encodeURIComponent(title);
+  var url = "https://lit-headland-12280.herokuapp.com/title/" + encodeURIComponent(title);
   var xml = new XMLHttpRequest();
   xml.onreadystatechange = function () {
     if (xml.readyState === 4 && xml.status == 200) {
@@ -31,7 +31,7 @@ function omdbRequest(title, success, failure) {
 
 
 function successCallback(json) {
-  alert(json);
+  alert("imdb rating of " + json.Title + " is: " + json.imdbRating);
 };
 
 function failureCallback(statusCode) {

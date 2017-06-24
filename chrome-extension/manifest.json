@@ -10,5 +10,9 @@
       ],
       "js":["ext.js"]
     }
+  ],
+  "permissions": [
+    "https://www.netflix.com/*",
+    "https://lit-headland-12280.herokuapp.com/title/*"
   ]
 }
