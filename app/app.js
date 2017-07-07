@@ -40,9 +40,9 @@ function addImgLinks(json) {
   if (json["Ratings"] !== null) {
     json["Ratings"].forEach(sourceAndValue => {
       switch(sourceAndValue["Source"]) {
-        case "Internet Movie Database": sourceAndValue["img"] = "https://www.andydowell.co.uk/images/imdb.png"; break;
-        case "Rotten Tomatoes": sourceAndValue["img"] = "https://www.andydowell.co.uk/images/rottentomatoes.png"; break;
-        case "Metacritic": sourceAndValue["img"] = "https://www.andydowell.co.uk/images/metacritic.png"; break;
+        case "Internet Movie Database": sourceAndValue["img"] = "http://www.andydowell.co.uk/images/imdb.png"; break;
+        case "Rotten Tomatoes": sourceAndValue["img"] = "http://www.andydowell.co.uk/images/rottentomatoes.png"; break;
+        case "Metacritic": sourceAndValue["img"] = "http://www.andydowell.co.uk/images/metacritic.png"; break;
       }
     });
   }
