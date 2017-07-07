@@ -56,7 +56,7 @@ function addImgLinks(json) {
     });
   }
 
-  return json;
+  return json; 
 }
 
 
