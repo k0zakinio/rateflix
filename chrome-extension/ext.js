@@ -17,6 +17,7 @@ function addDelayListener(elem) {
     function setListener(e) {
         timeout = setTimeout(() => omdbRequest(e.toElement, successCallback, failureCallback), 500);
     }
+
     elem.addEventListener('mouseenter', setListener);
     elem.addEventListener('mouseleave', () => clearTimeout(timeout));
     elem.setAttribute('has-listener', true);
