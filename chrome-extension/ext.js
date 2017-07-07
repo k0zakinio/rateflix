@@ -41,10 +41,10 @@ function omdbRequest(elem, success, failure) {
 
 function successCallback(json, elem) {
   const target = elem.querySelector('.bob-overlay');
-  if (target !== null && target.querySelector('.rateflix[data="rating"]') === null) {
+  if (target !== null && target.querySelector('.rateflix[data="rating"]') === null && json["Ratings"] !== undefined) {
     json["Ratings"].forEach(rating => {
-      let image = "<img src='"+rating["img"]+"' height='24px' width='24px' alt='"+rating["Source"]+"'>";
-      target.innerHTML +=  image + "<span class='rateflix' data='rating'> : " + rating["Value"] + "</span></br>";
+      let image = "<img src='"+rating["img"]+"' height='24px' width='24px' alt='"+rating["Source"]+"' style='vertical-align: middle;'>";
+      target.innerHTML +=  "<div style='padding-bottom:5px;'>" + image + "<span class='rateflix' data='rating' style='vertical-align: middle;font-size:20px;font-weight:bold;'> " + rating["Value"] + "</span></br>" + "</div>";
     });
   } else {
     console.log("ERROR: not adding html as there should already be html");
