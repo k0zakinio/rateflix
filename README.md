@@ -12,3 +12,14 @@ Title search
 
 *GET*
 `/title/:title`
+
+
+## To run backend locally - you'll need an OMDB API key ($$$)
+* `node app/app.js`
+
+## To run install extension
+* in the chrome browser go to `chrome://extensions/`
+* enable developer mode
+* `pack extension` and navigate to the chrome-extension folder
+* drag the chrome-extension.crx onto the extension window in chrome
+* all done
