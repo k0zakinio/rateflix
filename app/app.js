@@ -37,7 +37,7 @@ function omdbFromTitle(title, callback) {
 
 
 function addImgLinks(json) {
-  if (json["Ratings"] !== null) {
+  if (json["Ratings"] !== undefined) {
     json["Ratings"].forEach(sourceAndValue => {
       switch(sourceAndValue["Source"]) {
         case "Internet Movie Database": sourceAndValue["img"] = "http://www.andydowell.co.uk/images/imdb.png"; break;
