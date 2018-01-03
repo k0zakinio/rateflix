@@ -1,11 +1,6 @@
 setInterval(() => {
-  const titleCards = [];
-  const cards = document.querySelectorAll(".title_card");
-  cards.forEach(c => {
-    const t = c.getAttribute("aria-label");
-    if (t !== null) titleCards.push(c);
-  });
-  titleCards.forEach(elem => addDelayListener(elem));
+  const cards = document.querySelectorAll(".title-card");
+  cards.forEach(elem => addDelayListener(elem));
 }, 1000);
 
 function addDelayListener(elem) {
@@ -24,7 +19,7 @@ function addDelayListener(elem) {
 }
 
 function omdbRequest(elem, success, failure) {
-  const title = elem.getAttribute("aria-label");
+  const title = elem.querySelectorAll(".video-preload-title-label").item(0).innerHTML;
   const url = "https://lit-headland-12280.herokuapp.com/title/" + encodeURIComponent(title);
   const xml = new XMLHttpRequest();
   xml.onreadystatechange = () => {
